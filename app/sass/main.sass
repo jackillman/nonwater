@@ -1,0 +1,103 @@
+$acolor: #00df5f
+$accent: #1f3a93
+$dark-black: #050505
+$light-black: #282828
+
+
+@font-face
+	font-family: Oswald-Light
+	src: url(../fonts/Oswald/Oswald-Light.ttf)
+@font-face
+	font-family: Oswald-Regular
+	src: url(../fonts/Oswald/Oswald-Regular.ttf)
+@font-face
+	font-family: Oswald-Bold
+	src: url(../fonts/Oswald/Oswald-Bold.ttf)
+@font-face
+	font-family: Museo300
+	src: url(../fonts/Museo/Museosanscyrl300.ttf)
+@font-face
+	font-family: Museo500
+	src: url(../fonts/Museo/Museosanscyrl500.ttf)
+@font-face
+	font-family: Robo-Bold
+	src: url(../fonts/Roboto/RobotoCondensed-Bold.ttf)
+
+
+ 
+@mixin big
+	@media (min-width: 1201px)
+		@content
+ 
+@mixin large
+    @media (min-width: 992px) and (max-width: 1200px)
+    	@content
+       
+@mixin medium
+	@media (min-width: 768px) and (max-width: 991px)
+	    @content
+           
+@mixin small
+    @media (min-width: 500px) and (max-width: 767px)
+    	@content
+
+@mixin micro
+    @media (min-width: 250px) and (max-width: 499px)
+        @content
+@mixin vertical420
+	@media (max-height: 490px) and (min-width: 767px)
+        @content
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	
+
+body
+	font-size: 16px
+	min-width: 320px
+	min-height: 420px
+	position: relative
+	line-height: 1.75
+	font-family: Oswald-Regular
+	overflow-x: hidden
+	opacity: 1
+	color: #616161
+	background: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
