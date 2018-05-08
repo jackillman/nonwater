@@ -106,19 +106,94 @@ body
 		height: 100vh
 		z-index: 1
 		position: relative
+		@include small
+			background: url(../img/t-bg-1.jpg)
+			background-size: cover
+		@include micro
+			background: url(../img/t-bg-1.jpg)
+			background-size: cover
 		.header-top
 			height: 60px
 			box-shadow: 1px 1px 3px #333
 			z-index: 1111
 			position: relative
 			background: #fff
+			@include small
+				background: rgba(255,255,255,0.3)
+			@include micro
+				background: rgba(255,255,255,0.3)
 			&__logo
+				@include small
+					height: 100%
+				@include micro
+					height: 100%
+				
 				img
 					width: 110px
+					@include small
+						height: 100%
+						width: auto
+					@include micro
+						height: 60px
+						width: auto
+					
+			.nav-mobile
+				position: relative
+				// right: 15px
+				// top: -7px
+				// bottom: 0
+				height: 60px
+				background-color: transparent
+				width: 30px
+				cursor: pointer
+				transition: all linear .5s
+				margin-right: 0
+				display: inline-block
+				cursor: pointer
+				@include small
+					float: right
+				@include micro
+					float: right
+				// &.active			
+				// 	.nav-mobile__line--top
+				// 		top: 50%
+				// 		transform: rotate(45deg)
+				// 	.nav-mobile__line--middle
+				// 		opacity: 0
+				// 	.nav-mobile__line--bottom
+				// 		top: 50%
+				// 		transform: rotate(-45deg)
+				&__line	
+					position: absolute
+					// right: 18px
+					display: block
+					width: 30px
+					height: 5px	
+					background-color: $red
+					&--top
+						top: 18px
+						transition: all linear .5s
+						border-radius: 5px
+					&--middle
+						top: 28px
+						opacity: 1
+						transition: all linear .5s
+						border-radius: 5px
+					&--bottom
+						top: 38px
+						transition: all linear .5s
+						border-radius: 5px
 			&__menu
 				padding: 0
 				list-style-type: none
 				height: 60px
+				display: flex
+				justify-content: center
+				align-items: center
+				@include small
+					display: none
+				@include micro
+					display: none
 				li
 					width: 100%
 					height: 100%
@@ -127,6 +202,8 @@ body
 					justify-content: center
 					transition: all 0.5s
 					padding: 5px
+					@include medium
+						padding: 0
 					&:hover
 						background: beige
 					a
@@ -136,17 +213,30 @@ body
 						width: 100%
 						text-align: center
 						line-height: 60px
+						@include large
+							font-size: 14px
+						@include medium
+							font-size: 13px
+				li.track
+					a
+						@include medium
+							line-height: 1.2
 				li.red-menu
 					a
 						font-family: Opensans-bold
 						color: #fff
+						@include medium
+							line-height: 1.2
 				li.red-menu-bg
 					position: relative
 					z-index: 11
+
 					
 					a
 						font-family: Opensans-bold
 						color: #fff
+						@include medium
+							line-height: 1.2
 					&:before
 						position: absolute
 						content: ""
@@ -160,6 +250,9 @@ body
 					position: relative
 					border-left: 1px solid rgba(222,222,222,0.5)
 					z-index: 11
+					a
+						@include medium
+							line-height: 1.2
 					&:hover
 						background: none
 					
@@ -172,10 +265,14 @@ body
 						width: 20px
 						height: 20px
 						left: 5px
+						@include medium
+							display: none
+
 		.header-mid
 			position: relative
 			z-index: 11
 			margin-top: 150px
+			
 			&__langs
 				list-style-type: none
 				padding: 0
@@ -192,6 +289,7 @@ body
 						color: #fff
 						font-size: 18px
 						text-decoration: none
+
 						
 				.active-lang
 					background: $red
@@ -227,12 +325,16 @@ body
 					align-self: center
 					opacity: 0.5
 	.main
+		.block-title
+			color: $dark-blue
+			font-size: 44px
+			text-align: center
+			@include medium
+				font-size: 26px
 		.problems
 			padding-top: 60px
 			.block-title
-				color: $dark-blue
-				font-size: 44px
-				text-align: center
+				
 			.block-title-hl
 				font-family: Opensans-bold
 				color: $red
@@ -242,11 +344,51 @@ body
 			&__list
 				margin-top: 40px
 				list-style-type: none
-				li
-					height: 60px	
+				@include medium
+					padding: 0
+					display: flex
+					align-items: center
+				@include small
+					padding: 0
+				@include micro
+					padding: 0
+
+				&-item
+					height: 100px	
 					color: #000000
 					font-size: 18px	
 					line-height: 1.2
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					margin-bottom: 20px
+					@include medium
+						display: inline-flex
+						width: 400px
+						
+					.problems__content
+						position: relative
+						width: 300px
+						&:before
+							content: ""
+							position: absolute
+							background: url(../img/c1.gif)
+							background-size: cover
+							width: 40px
+							height: 40px
+							left: -60px
+					.problems__img
+						height: 100%
+					
+
+
+
+
+
+
+
+
+
 
 
 #sale
@@ -264,6 +406,21 @@ body
 	color: #ffffff
 	box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75)
 	font-size: 14px
+	@include small
+		position: static
+		height: 100%
+		padding: 5px
+		border-radius: 0px
+		width: 200px
+		
+	@include micro
+		position: static
+		height: 90%
+		padding: 5px
+		border-radius: 0px
+		font-size: 11px
+		margin-top: 3px
+
 	img
 		opacity: 0.8
 		width: 80px
