@@ -1007,6 +1007,12 @@ body {
   padding-bottom: 200px;
 }
 
+@media (min-width: 500px) and (max-width: 767px) {
+  .wrapper .main .wemedia {
+    padding-bottom: 100px;
+  }
+}
+
 .wrapper .main .wemedia h2 {
   margin-bottom: 20px;
 }
@@ -1014,6 +1020,42 @@ body {
 @media (min-width: 992px) and (max-width: 1200px) {
   .wrapper .main .wemedia h2 {
     font-size: 36px;
+  }
+}
+
+.wrapper .main .wemedia-slider .slick-prev,
+.wrapper .main .wemedia-slider .slick-next {
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 111;
+}
+
+.wrapper .main .wemedia-slider .slick-prev:before,
+.wrapper .main .wemedia-slider .slick-next:before {
+  font-size: 40px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .wrapper .main .wemedia-slider .slick-next {
+    right: -50px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .wrapper .main .wemedia-slider .slick-next {
+    right: -50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .wrapper .main .wemedia-slider .slick-prev {
+    left: -50px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .wrapper .main .wemedia-slider .slick-prev {
+    left: -50px;
   }
 }
 
