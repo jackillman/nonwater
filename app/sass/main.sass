@@ -329,6 +329,8 @@ body
 			color: $dark-blue
 			font-size: 44px
 			text-align: center
+			@include large
+				font-size: 36px
 			@include small
 				font-size: 32px
 			@include micro
@@ -534,12 +536,217 @@ body
 						font-size: 32px
 						color: #fff
 					p
-						color: #fff			
+						color: #fff
 
+		.use
+			
+			background: url(../img/bg-kapli.jpg)
+			background-size: cover
+			padding-top: 40px
+			padding-bottom: 40px
+			animation-name: usage
+			animation-duration: 4000ms
+			animation-iteration-count: infinite
+			animation-timing-function: ease
+			&__box
+				position: relative
+				height: 700px
+				margin-bottom: 30px
+				&-boot
+					
+					position: absolute
+					top: 100px
+					width: 800px
+					@include large
+						width: 700px
+					
+						
+				&-item
+					position: absolute
+					.use-content
+						float: right
+						width: 100px
+						margin-left: 30px
+						margin-top: 30px
+						font-size: 16px
+				.use-item-1
+					left: 630px	
+					top: 15px
+				.use-item-2
+					left: 705px	
+					top: 255px
+				.use-item-3
+					left: 635px
+					top: 450px
+			.instruction-box
+				display: flex
+				justify-content: center
+				.instruction		
+					background-color: #ea2525
+					color: white
+					border: 0px
+					padding: 7px 30px
+					cursor: pointer
+					font-size: 16px
+					text-align: center
+		.review
+			background: url(../img/bg-7.jpg)
+			padding-top: 30px
+			padding-bottom: 30px
+			.block-title-white
+				text-align: center
+				color: #fff
+				font-size: 44px
+			&-slider
+				margin-top: 20px
+				padding-bottom: 30px
+				font-size: 44px
+				.slick-prev,
+				.slick-next
+					width: 40px!important
+					height: 40px!important
+					&:before
+						font-size: 40px
+				.slide-review-item
+					display: flex
+					justify-content: center
+					outline: none
 
+		.videos
+			background: url(../img/bg-9.jpg)
+			padding-top: 60px
+			padding-bottom: 30px
+			h2
+				font-size: 44px	
+				text-align: center
+				color: #ffffff
+				margin-bottom: 20px
+				span
+					color: #ea2525
+					font-weight: 700
+			&-slider
+				margin-top: 20px
+				padding-bottom: 30px
+				font-size: 44px
+				.slick-prev,
+				.slick-next
+					width: 40px!important
+					height: 40px!important
+					&:before
+						font-size: 40px
+				.slide-videos-item
+					outline: none
+					.video
+						margin: 0 auto
+						display: block
+						height: 500px
+						cursor: pointer
+		.wemedia
+			background: url(../img/bg-news2.jpg)
+			padding-top: 60px
+			padding-bottom: 200px
+			h2
+				margin-bottom: 20px
+				@include large
+					font-size: 36px
+			&-slider
+			
+				
+				.slide-wemedia-item
+					width: 400px
+					margin: 10px
+					background: #fff
+					padding: 16px
+					h3
+						text-align: center
+					.date
+						text-align: right
+					a
+						float: right
+					
+					img
+						width: 100%
+					p
+						@include large
+							font-size: 14px
+					
+						
+		.faq
+			background: #282828
+			padding-top: 60px
+			padding-bottom: 60px
+			height: 900px
+			@include large
+				height: 800px
+			h2
+				font-size: 44px
+				color: #fff
+				margin-bottom: 20px
+			#accordion
+				.card
+					margin-bottom: 4px
 
+					&-header
+						background: #792626
+						button
+							color: #fff
+							text-decoration: none
+							cursor: pointer
+							font-size: 15px
+							font-weight: 600
+							padding: 5px 20px
+							@include large
+								font-size: 12px
+					&-body
+						font-size: 14px
+		.follow
+			padding-top: 60px
+			padding-bottom: 60px
+			background: url(../img/bg-8.jpg)
+			background-size: cover
+			h2
+				margin-bottom: 20px
+			&-box
+				display: flex
+				justify-content: center
+				a
+					margin: 20px
+	.footer
+		background: #ed1c24
+		padding-top: 30px
+		color: #ffffff
+		h5
+			font-weight: 600
+		&__logo
+		&__menu
+			padding: 0
+			list-style-type: none
+			li
+				a
+					color: #fff
+		&__cont
+			padding: 0
+			list-style-type: none
+			li
+				i
+					width: 20px
+				a
+					color: #fff
+		&__descs
+			padding: 0
+			list-style-type: none
+			li
+				a
+					color: #fff
 
+							
 
+						
+						
+							
+							
+							
+							
 
 
 #sale
@@ -576,3 +783,17 @@ body
 		opacity: 0.8
 		width: 80px
 		padding-top: 10px
+
+
+@keyframes usage
+	from
+		/*transform:scale(1, 1);*/
+		background-size: 100% 100%
+	
+	50%
+		/*transform:scale(1.2, 1.2);*/
+		background-size: 105% 105%
+	to 
+		/*transform:scale(1, 1);*/
+		background-size: 100% 100%
+
