@@ -464,6 +464,9 @@ body
 			&__img
 				img
 					height: 100%
+					@include large
+						position: absolute
+						left: -140px
 
 		.promo
 			padding-top: 60px
@@ -537,6 +540,8 @@ body
 						color: #fff
 					p
 						color: #fff
+						@include large
+							font-size: 14px
 
 		.use
 			
@@ -572,12 +577,21 @@ body
 				.use-item-1
 					left: 630px	
 					top: 15px
+					@include large
+						left: 540px
+						top: 0px
 				.use-item-2
 					left: 705px	
 					top: 255px
+					@include large
+						left: 620px
+						top: 220px
 				.use-item-3
 					left: 635px
 					top: 450px
+					@include large
+						left: 520px
+						top: 460px
 			.instruction-box
 				display: flex
 				justify-content: center
@@ -632,8 +646,19 @@ body
 				.slick-next
 					width: 40px!important
 					height: 40px!important
+					z-index: 111
 					&:before
 						font-size: 40px
+				.slick-next
+					@include medium
+						right: -50px
+					@include small
+						right: -50px
+				.slick-prev
+					@include medium
+						left: -50px
+					@include small
+						left: -50px
 				.slide-videos-item
 					outline: none
 					.video
@@ -641,6 +666,12 @@ body
 						display: block
 						height: 500px
 						cursor: pointer
+						@include medium
+							height: auto
+							width: 100%
+						@include small
+							height: auto
+							width: 100%
 		.wemedia
 			background: url(../img/bg-news2.jpg)
 			padding-top: 60px
@@ -669,6 +700,9 @@ body
 					p
 						@include large
 							font-size: 14px
+						@include medium
+							font-size: 14px
+							
 					
 						
 		.faq
@@ -717,7 +751,9 @@ body
 		color: #ffffff
 		h5
 			font-weight: 600
-		&__logo
+		.foot
+			@include medium
+				margin-bottom: 40px
 		&__menu
 			padding: 0
 			list-style-type: none
