@@ -96,9 +96,27 @@ body
 	top: 0!important
 // .active
 // 	top: 0!important
+.mobile-menu
+	display: none
+	text-align: center
+	list-style-type: none
+	padding: 0
+	background: rgba(255,255,255,1)
+	height: 100%
 
+	
+	li
+		border-bottom: 1px solid #333
+		a
+			color: #111
+			font-size: 18px
+			line-height: 2
+.active-mobile-menu
+	display: block!important
+	height: 100%
 
 .wrapper
+	overflow-x: hidden
 	.header
 		background: url(../img/main-bg2.jpg)
 		background-size: cover
@@ -109,9 +127,11 @@ body
 		@include small
 			background: url(../img/t-bg-1.jpg)
 			background-size: cover
+			height: 600px
 		@include micro
 			background: url(../img/t-bg-1.jpg)
 			background-size: cover
+			height: auto
 		.header-top
 			height: 60px
 			box-shadow: 1px 1px 3px #333
@@ -122,20 +142,21 @@ body
 				background: rgba(255,255,255,0.3)
 			@include micro
 				background: rgba(255,255,255,0.3)
+
 			&__logo
 				@include small
 					height: 100%
 				@include micro
 					height: 100%
-				
-				img
-					width: 110px
-					@include small
-						height: 100%
-						width: auto
-					@include micro
-						height: 60px
-						width: auto
+				a
+					img
+						width: 110px
+						@include small
+							height: 100%
+							width: auto
+						@include micro
+							height: 60px
+							width: 100%
 					
 			.nav-mobile
 				position: relative
@@ -153,7 +174,8 @@ body
 				@include small
 					float: right
 				@include micro
-					float: right
+					float: none
+					width: 100%
 				// &.active			
 				// 	.nav-mobile__line--top
 				// 		top: 50%
@@ -272,19 +294,25 @@ body
 			position: relative
 			z-index: 11
 			margin-top: 150px
-			
+			@include small
+				margin-top: 50px
+			@include micro
+				margin-top: 40px
 			&__langs
 				list-style-type: none
 				padding: 0
-
-
+				@include micro
+					justify-content: center
 				li
 					background: $blue
 					padding: 5px 10px
 					margin: 5px
 					border-radius: 6px
 					box-shadow: inset 0 -4px 5px rgba(0,0,0,0.125)
-					
+					@include small
+						padding: 5px
+					@include micro
+						padding: 5px 10px
 					a
 						color: #fff
 						font-size: 18px
@@ -296,16 +324,35 @@ body
 			&__content
 				
 				margin-top: 100px
+				@include micro
+					margin-top: 50px
+
+				&-box
+					display: flex	
 				h1
 					font-size: 32px
 					color: #fff
 					text-shadow: 1px 1px 2px #333
+					@include micro
+						font-size: 24px
+						padding-top: 20px
+					strong
+						@include micro
+							color: $red
 			&__select
 				font-size: 20px
 				text-transform: uppercase
 				color: #fff
+
+				@include micro
+					width: 100%
+					display: block
+					text-align: center
+					margin: 0 auto
 			&__btn
 				width: 200px
+				@include micro
+					width: 50%
 				
 				button
 					margin-top: 10px
@@ -318,12 +365,36 @@ body
 					font-size: 16px
 					width: 180px
 					align-self: center
+					@include micro
+						width: 100%
 				img
 					
 					margin-top: 10px
 					width: 140px
 					align-self: center
 					opacity: 0.5
+		&__special-btns-mini
+			
+			display: none
+			margin-top: 50px
+			@include micro
+				display: flex
+			@include small
+			.special-btn-buy
+				border-left: 1px solid #333
+				line-height: 1.2
+				.buy-now-img
+					height: 20px
+			button
+				width: 100%
+				height: 60px
+				background: $red
+				border: none
+				cursor: pointer
+				color: #ffffff
+				font-size: 18px
+				&:hover
+					background: rgba($red,0.8)
 	.main
 		.block-title
 			color: $dark-blue
@@ -332,21 +403,27 @@ body
 			@include large
 				font-size: 36px
 			@include small
+				font-size: 26px
+				padding-left: 20px
+				padding-right: 20px
+			@include medium
 				font-size: 32px
 			@include micro
 				font-size: 22px
-				color: $red
+				
 			&-hl
 				font-family: Opensans-bold
 				color: $red
 			@include medium
-				font-size: 26px
+				font-size: 32px
 			strong
 				@include micro
 					color: $dark-blue
 		.problems
 			padding-top: 60px
 			margin-bottom: 30px
+			@include small
+				padding-top: 30px
 			&__img
 				img
 					width: 100%
@@ -376,7 +453,7 @@ body
 						width: 400px
 					@include small
 						font-size: 14px
-						padding-left: 30px
+						padding-left: 50px
 						width: 100%
 						height: 80px
 					@include micro
@@ -414,7 +491,8 @@ body
 			background: #f4f4f4
 			padding-top: 60px
 			@include small
-				padding-top: 20px
+				padding-top: 30px
+				padding-bottom: 30px
 			@include micro
 				padding-top: 20px
 			&__left
@@ -422,7 +500,8 @@ body
 				flex-wrap: wrap
 				justify-content: center
 				padding-top: 30px
-
+				@include medium
+					padding-bottom: 30px
 				&-item
 					width: 50%
 					padding: 5px
@@ -471,8 +550,51 @@ body
 		.promo
 			padding-top: 60px
 			padding-bottom: 60px
+			@include small
+				padding-top: 0px
+				padding-bottom: 30px
+				background: url(../img/bg-t-promomob.png) no-repeat
+				background-size: 80%
+				background-position: right
+			@include micro
+				padding-top: 0px
+				padding-bottom: 30px
+				background: url(../img/bg-t-promomob.png) no-repeat
+				background-size: 100%
+				background-position: right
+			&-micro-box
+				border-top: 3px solid #333333
+				border-bottom: 3px solid #333
+				padding-top: 10px
+			&-micro-t
+				color: $dark-blue
+				text-align: center
+				font-weight: bold
+				@include micro
+					font-size: 20px
+				span
+					color: crimson
+					font-weight: normal
+			&-takes
+				text-align: center
+				color: $dark-blue
+				font-weight: bold
+				@include micro
+					font-size: 20px
+			&-worldwide
+				font-weight: bold
+				text-align: center
+				color: crimson
+				@include micro
+					font-size: 20px
+					
 			&-block
 				background: url(../img/bg-promo.jpg) right center / 60% no-repeat #fff
+				@include small
+					background: none
+				@include micro
+					background: none
+
 			&__title
 				text-align: left
 				margin: 0
@@ -482,7 +604,11 @@ body
 				line-height: 60px
 				color: #ea2525
 				font-weight: 700
-				text-transform: uppercase		
+				text-transform: uppercase
+				@include small
+					font-size: 38px	
+				@include micro
+					font-size: 26px	
 			&__price
 				color: $red
 				.price-now
@@ -490,6 +616,10 @@ body
 					font-weight: bold
 					color: $dark-blue
 					font-family: Opensans-bold
+					@include small
+						font-size: 38px
+					@include micro
+						font-size: 26px
 				.price-throught
 					text-decoration: line-through
 					font-family: Opensans-bold
@@ -497,10 +627,19 @@ body
 				font-family: Opensans-bold
 				font-size: 26px
 				color: $dark-blue
+				@include small
+					font-size: 22px
+				@include micro
+					font-size: 18px
+					text-shadow: -1px -1px #efefef, 1px 1px #777
 				&-guarantee
 					font-size: 26px
 					font-weight: bold
 					color: #1a0d40
+					@include small
+						font-size: 20px
+					@include micro
+						font-size: 16px
 			&__btn
 				background-color: #ea2525
 				border: 0
@@ -509,21 +648,81 @@ body
 				cursor: pointer
 				line-height: 1.4
 				font-size: 16px
+				@include small
+					margin-top: 150px
+				@include micro
+					margin-top: 180px
+					padding: 12px 50px
 			&__end
 				margin-top: 20px
 				font-size: 21px
 				color: #212121
+
 			.counter
 				margin-top: 30px
 				margin-bottom: 30px
+				@include micro
+					width: 100%
+				.flip-clock-wrapper
+					@include micro
+						margin: 0
+				.flip-clock-divider
+					@include micro
+						width: 10px
+					.flip-clock-dot
+						@include micro
+							left: 0
+				.flip
+					@include small
+						width: 44px
+					@include micro
+						width: 30px
+						margin: 1px
+
+					.inn
+						@include small
+							font-size: 60px
+						@include micro
+							font-size: 50px
+					&-clock-label
+						right: -85px
+						@include large
+							
+						@include medium
+							right: -95px
+						@include small
+							right: -70px
+						@include micro
+							right: -60px
 		.how
 			background: url(../img/bg-5.jpg)
 			height: 585px
+			@include medium
+				background: #000
+				background-size: cover
+				height: auto
+			@include small
+				background: #000
+				background-size: cover
+				height: auto
+				padding-bottom: 30px
+			@include micro
+				background: #000
+				background-size: cover
+				height: auto
+				padding-bottom: 30px
 			&__box
 				display: flex
 				justify-content: center
 				align-items: center
 				height: 585px
+				@include medium
+					margin-top: 30px
+				@include small
+					margin-top: 30px
+				@include micro
+					margin-top: 30px
+					height: auto
 			&__block
 				background: url(../img/working-img.png) no-repeat center
 				height: 440px
@@ -532,9 +731,53 @@ body
 				justify-content: flex-end
 				padding-top: 50px
 				padding-right: 40px
+				
+				
+				&-title-mini
+					color: #fff
+					text-align: center
+					font-size: 32px
+					
+				@include medium
+					background: transparent
+					flex-direction: column
+					height: auto
+					padding-right: 0
+					padding-top: 0
+				@include small
+					background: transparent
+					flex-direction: column
+					height: auto
+					padding-right: 0
+					padding-top: 0
+				@include micro
+					background: transparent
+					flex-direction: column
+					height: auto
+					padding-right: 0
+					padding-top: 0
+				&-img
+					width: 300px
+					margin: 0 auto
+					height: 200px
+					@include micro
+						width: 100%
 				&-content
 					width: 50%
 					height: 400px
+
+					@include medium
+						width: auto
+						height: auto
+						margin-top: 50px
+					@include small
+						width: auto
+						height: auto
+						margin-top: 50px
+					@include micro
+						width: auto
+						height: auto
+						margin-top: 50px
 					h3
 						font-size: 32px
 						color: #fff
@@ -544,7 +787,6 @@ body
 							font-size: 14px
 
 		.use
-			
 			background: url(../img/bg-kapli.jpg)
 			background-size: cover
 			padding-top: 40px
@@ -553,10 +795,30 @@ body
 			animation-duration: 4000ms
 			animation-iteration-count: infinite
 			animation-timing-function: ease
+			@include micro
+				animation: none
 			&__box
 				position: relative
 				height: 700px
 				margin-bottom: 30px
+				@include medium
+					display: flex
+					flex-direction: column
+					margin-top: 30px
+					height: 800px
+					margin-bottom: 30px
+				@include small
+					display: flex
+					flex-direction: column
+					margin-top: 30px
+					height: 800px
+					margin-bottom: 30px
+				@include micro
+					display: flex
+					flex-direction: column
+					margin-top: 30px
+					height: 800px
+					margin-bottom: 30px
 				&-boot
 					
 					position: absolute
@@ -564,16 +826,57 @@ body
 					width: 800px
 					@include large
 						width: 700px
-					
-						
+					@include medium
+						width: 350px
+						position: static
+						order: 5	
+						margin: 20px auto
+					@include small
+						width: 350px
+						position: static
+						order: 5	
+						margin: 20px auto
+					@include micro
+						width: 280px
+						position: static
+						order: 5	
+						margin: 20px auto
 				&-item
 					position: absolute
+					@include medium
+						position: static
+						width: 350px
+						display: flex
+						margin: 5px auto
+						justify-content: space-between
+					@include small
+						position: static
+						width: 350px
+						display: flex
+						margin: 5px auto
+						justify-content: space-between
+					@include micro
+						position: static
+						width: 100%
+						display: flex
+						margin: 5px auto
+						justify-content: space-between
+						
 					.use-content
 						float: right
 						width: 100px
 						margin-left: 30px
 						margin-top: 30px
 						font-size: 16px
+						@include medium
+							float: none
+							font-size: 18px
+						@include small
+							float: none
+							font-size: 18px
+						@include micro
+							float: none
+							font-size: 18px
 				.use-item-1
 					left: 630px	
 					top: 15px
@@ -586,6 +889,12 @@ body
 					@include large
 						left: 620px
 						top: 220px
+					@include medium
+						flex-direction: row-reverse
+					@include small
+						flex-direction: row-reverse
+					@include micro
+						flex-direction: row-reverse
 				.use-item-3
 					left: 635px
 					top: 450px
@@ -611,30 +920,94 @@ body
 				text-align: center
 				color: #fff
 				font-size: 44px
+				@include medium
+					font-size: 32px
+				@include small
+					font-size: 26px
+				@include micro
+					font-size: 22px
 			&-slider
 				margin-top: 20px
 				padding-bottom: 30px
 				font-size: 44px
-				.slick-prev,
+
+				.slick-prev
+					width: 40px!important
+					height: 40px!important
+					z-index: 1111
+					@include large
+						left: 25px
+					@include small
+						left: 0
+						top: 100%
+					@include micro
+						left: 0
+						top: 100%
+					&:before
+						font-size: 40px				
 				.slick-next
 					width: 40px!important
 					height: 40px!important
+					z-index: 1111
+					@include large
+						right: 25px
+					@include small
+						right: 0
+						top: 100%
+					@include micro
+						right: 0
+						top: 100%
+	
 					&:before
 						font-size: 40px
 				.slide-review-item
 					display: flex
 					justify-content: center
 					outline: none
-
+					@include small
+						display: block
+						text-align: center
+						margin: 0 auto
+					@include micro
+						display: block
+						text-align: center
+						margin: 0 auto
+					a
+						@include micro
+							width: 300px
+							display: block
+						img
+							@include micro
+								width: 100%
+				.post-1
+					a
+						img
+							@include small
+								width: 100%
+							@include micro
+								width: 100%
+		.promo2
+			padding-top: 40px
+			background-position: right 35%
+			@include micro
+				padding-top: 20px
 		.videos
 			background: url(../img/bg-9.jpg)
 			padding-top: 60px
 			padding-bottom: 30px
+			@include medium
+				padding-bottom: 60px
 			h2
 				font-size: 44px	
 				text-align: center
 				color: #ffffff
 				margin-bottom: 20px
+				@include medium
+					font-size: 32px
+				@include small
+					font-size: 26px
+				@include micro
+					font-size: 22px
 				span
 					color: #ea2525
 					font-weight: 700
@@ -642,6 +1015,9 @@ body
 				margin-top: 20px
 				padding-bottom: 30px
 				font-size: 44px
+				@include medium
+					margin: 0 auto
+					width: 90%
 				.slick-prev,
 				.slick-next
 					width: 40px!important
@@ -653,12 +1029,20 @@ body
 					@include medium
 						right: -50px
 					@include small
-						right: -50px
+						right: 0px
+						top: 100%
+					@include micro
+						right: 0px
+						top: 100%
 				.slick-prev
 					@include medium
 						left: -50px
 					@include small
-						left: -50px
+						left: 0px
+						top: 100%
+					@include micro
+						left: 0px
+						top: 100%
 				.slide-videos-item
 					outline: none
 					.video
@@ -672,12 +1056,19 @@ body
 						@include small
 							height: auto
 							width: 100%
+						@include micro
+							height: auto
+							width: 100%
 		.wemedia
 			background: url(../img/bg-news2.jpg)
 			padding-top: 60px
 			padding-bottom: 200px
-			@include small
+			@include medium
 				padding-bottom: 100px
+			@include small
+				padding-bottom: 60px
+			@include micro
+				padding-bottom: 60px
 			h2
 				margin-bottom: 20px
 				@include large
@@ -690,16 +1081,28 @@ body
 					z-index: 111
 					&:before
 						font-size: 40px
+						@include small
+							color: #333
+						@include micro
+							color: #333
 				.slick-next
 					@include medium
 						right: -50px
 					@include small
-						right: -50px
+						right: 0px
+						top: 103%
+					@include micro
+						right: 0px
+						top: 103%
 				.slick-prev
 					@include medium
 						left: -50px
 					@include small
-						left: -50px			
+						left: 0px
+						top: 103%
+					@include micro
+						left: 0px
+						top: 103%		
 				.slide-wemedia-item
 					width: 400px
 					margin: 10px
@@ -718,7 +1121,7 @@ body
 						@include large
 							font-size: 14px
 						@include medium
-							font-size: 14px
+							font-size: 13px
 							
 					
 						
@@ -729,16 +1132,41 @@ body
 			height: 900px
 			@include large
 				height: 800px
+			@include medium
+				height: auto
+			@include small
+				height: auto
+				padding-top: 30px
+			@include micro
+				height: auto
+				padding-top: 30px
 			h2
 				font-size: 44px
 				color: #fff
 				margin-bottom: 20px
+				@include small
+					font-size: 36px
+				@include micro
+					font-size: 28px
 			#accordion
 				.card
 					margin-bottom: 4px
+					.btn-link
+						&:before
+							font-family: 'FontAwesome'  
+							content: "\f068"
+							position: absolute
+							left: 12px
+							@include micro
+								top: 15px
+						&.collapsed:before
+    						content: "\f067"
 
 					&-header
 						background: #792626
+						@include micro
+							padding: 5px
+							padding-left: 30px
 						button
 							color: #fff
 							text-decoration: none
@@ -748,6 +1176,14 @@ body
 							padding: 5px 20px
 							@include large
 								font-size: 12px
+							@include medium
+								font-size: 14px
+							@include small
+								text-align: left
+							@include micro
+								text-align: left
+								font-size: 13px
+								padding: 0
 					&-body
 						font-size: 14px
 		.follow
@@ -760,12 +1196,26 @@ body
 			&-box
 				display: flex
 				justify-content: center
+				@include small
+					flex-direction: column
+					justify-content: center
+					align-items: center
+				@include micro
+					flex-direction: column
+					justify-content: center
+					align-items: center
 				a
 					margin: 20px
+					@include micro
+						margin: 20 auto
+					img
+						@include micro
+							width: 100%
 	.footer
 		background: #ed1c24
 		padding-top: 30px
 		color: #ffffff
+		
 		h5
 			font-weight: 600
 		.foot
@@ -798,7 +1248,36 @@ body
 						
 							
 							
-							
+#up
+	position: fixed
+	opacity: 0.8
+	padding: 15px 10px 10px
+	background: #aaa
+	border-radius: 5px
+	left: 10px
+	bottom: 10px
+	display: none
+	cursor: pointer							
+
+	
+/* MESSENGER WIDGET ==> START */
+.messenger
+	position: fixed
+	z-index: 100
+	right: 10px
+	bottom: 10px
+	display: block
+	width: 250px
+	height: 65px
+	background: url("../img/messenger.png") top left/246px no-repeat
+	border: 2px solid #0581f9
+	border-radius: 7px
+	&:hover
+		background: url("../img/messenger.png") 0 -65px/246px no-repeat
+		border: 2px solid #ececec
+	&.messenger-hover-js:hover
+  		background: url("../img/messenger.png") -5px -91px/330px no-repeat !important
+/* MESSENGER WIDGET ==> END */
 							
 
 
@@ -811,7 +1290,7 @@ body
 	border-radius: 7px
 	right: 10px
 	top: 10px
-    // display: none
+    //display: none
 	cursor: pointer
 	text-align: center
 	color: #ffffff
@@ -823,10 +1302,11 @@ body
 		padding: 5px
 		border-radius: 0px
 		width: 200px
+		margin: 0 auto
 		
 	@include micro
 		position: static
-		height: 90%
+		
 		padding: 5px
 		border-radius: 0px
 		font-size: 11px
@@ -836,7 +1316,41 @@ body
 		opacity: 0.8
 		width: 80px
 		padding-top: 10px
+#sale1
+	z-index: 1111
+	position: fixed
+	opacity: 1
+	padding: 15px 10px 15px
+	background: #ea2525
+	border-radius: 7px
+	right: 10px
+	top: 10px
+    //display: none
+	cursor: pointer
+	text-align: center
+	color: #ffffff
+	box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75)
+	font-size: 14px
+	@include small
+		position: static
+		height: 100%
+		padding: 5px
+		border-radius: 0px
+		width: 200px
+		margin: 0 auto
+		
+	@include micro
+		position: static
+		
+		padding: 5px
+		border-radius: 0px
+		font-size: 11px
+		margin-top: 3px
 
+	img
+		opacity: 0.8
+		width: 80px
+		padding-top: 10px
 
 @keyframes usage
 	from
@@ -850,3 +1364,8 @@ body
 		/*transform:scale(1, 1);*/
 		background-size: 100% 100%
 
+#exampleModal 
+	.modal-body
+  		font-size: 10px
+.modal-dialog
+	max-width: 650px!important

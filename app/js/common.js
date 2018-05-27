@@ -1,4 +1,34 @@
 $(document).ready(function(){
+
+	$(".nav-mobile").on("click",function(){
+		$(".mobile-menu").toggle(".active-mobile-menu")
+	})
+	$(".mnu").on("click","a", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
+
+	$('#up').click(function () {
+        $('html, body').animate({scrollTop: 0}, 500);
+        return false;
+	});
+	$(window).scroll(function () {
+        if ($(document).scrollTop() > 300) {
+            $('#sale1').fadeIn('fast');
+            // jQuery('#messenger').fadeIn('fast');
+        } else {
+            $('#sale1').fadeOut('fast');
+            // jQuery('#messenger').fadeOut('fast');
+        }
+    });
+
+	new WOW().init();
     var clock, clock2;
 
         console.log("ready state flip");
@@ -35,12 +65,28 @@ $(document).ready(function(){
 		$('.review-slider').slick({
 			autoplay: true,
 			autoplaySpeed: 5000,
-			dots: true
+			dots: true,
+			responsive: [
+				{
+				  breakpoint: 768,
+				  settings: {
+					dots: false
+				  }
+				}
+			  ]
 		});
 		$('.videos-slider').slick({
 			 autoplay: true,
 			autoplaySpeed: 5000,
-			dots: true
+			dots: true,
+			responsive: [
+				{
+				  breakpoint: 768,
+				  settings: {
+					dots: false
+				  }
+				}
+			  ]
 		});
 		$('.wemedia-slider').slick({
 		
@@ -54,7 +100,7 @@ $(document).ready(function(){
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					infinite: true,
-					dots: true
+					dots: false
 				  }
 				}
 				// You can unslick at a given breakpoint now by adding:

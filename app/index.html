@@ -17,12 +17,14 @@
 	<meta name="description"
     content="nonwater.com">
 	<!-- <meta property="og:image" content="path/to/image.jpg"> -->
-	<link rel="shortcut icon" href="" type="image/x-icon">
-	<link rel="stylesheet" href="libs/FlipClock/flipclock.css">
+	<link rel="shortcut icon" href="./img/favicon/ahma1.ico" type="image/x-icon">
+	<!-- <link rel="stylesheet" href="libs/FlipClock/flipclock.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./libs/slick/slick-theme.css">
 	<link rel="stylesheet" href="./libs/slick/slick.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<!-- <link rel="stylesheet" href="./libs/jqueryUI/jquery-ui.min.css"> -->
 	<!-- <link rel="stylesheet" href="libs/jquery-ui-cust/jquery-ui.min.css"> -->
    
@@ -43,6 +45,8 @@
 <body>
 	<div class="wrapper">
 		<header class="header">
+
+
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
@@ -50,7 +54,7 @@
 							<div class="header-top__logo">
 								<a href="">
 									<img src="img/logo.jpg" alt="" class="d-none d-md-block ">
-									<img src="img/t-logo-1.png" alt="" class="p-1 d-xs-block d-md-none">
+									<img src="img/t-logo-1.png" alt="" class="p-1 d-block d-md-none">
 								</a>
 							</div>
 						</div>
@@ -60,24 +64,33 @@
 							</div>
 						</div>
 						<div class="col-3 col-md-10">
-								<div class="nav-mobile d-xs-block d-md-none">
+								<div class="nav-mobile d-flex justify-content-end d-md-none">
 										<span class="nav-mobile__line nav-mobile__line--top"></span>
 										<span class="nav-mobile__line nav-mobile__line--middle active"></span>
 										<span class="nav-mobile__line nav-mobile__line--bottom"></span>		
 									</div>
-							<ul class="header-top__menu">
-								<li><a href="">Advantages</a></li>
-								<li><a href="">How it work</a></li>
-								<li><a href="">FAQ</a></li>
-								<li><a href="">Video</a></li>
+							<ul class="header-top__menu mnu">
+								<li><a href="#advantages">Advantages</a></li>
+								<li><a href="#how">How it work</a></li>
+								<li><a href="#faq">FAQ</a></li>
+								<li><a href="#video">Video</a></li>
 								<li class="track"><a href="">Track my order</a></li>
 								<li class="red-menu-bg"><a href="">Special offers</a></li>
-								<li class="red-menu"><a href="">Buy now</a></li>
+								<li class="red-menu"><a  href="https://www.2checkout.com/checkout/purchase?sid=103135585&quantity=1&product_id=1&currency_code=USD&%24curPage=en&%24flag=0" onClick="fbq('track', 'AddToCart', {value: 25.00,currency: 'USD'});">Buy now</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
+			<ul class="mobile-menu mnu">
+					<li><a href="#advantages">Advantages</a></li>
+					<li><a href="#how">How it work</a></li>
+					<li><a href="#faq">FAQ</a></li>
+					<li><a href="#video">Video</a></li>
+					<li class="track"><a href="">Track my order</a></li>
+					<li class="red-menu-bg"><a href="https://nonwater.com/upsale.php">Special offers</a></li>
+					<li class="red-menu"><a  href="https://www.2checkout.com/checkout/purchase?sid=103135585&quantity=1&product_id=1&currency_code=USD&%24curPage=en&%24flag=0" onClick="fbq('track', 'AddToCart', {value: 25.00,currency: 'USD'});">Buy now</a></li>
+				</ul>
 			<div class="header-mid">
 				<div class="container">
 					<div class="row">
@@ -86,28 +99,50 @@
 								<img src="img/utp-img-1.png" alt="">
 							</div>
 						</div>
-						<div class="col-sm-9 col-md-9 col-lg-8 col-xl-6">
+						<div class="col-sm-10 col-md-9 col-lg-8 col-xl-6">
 							<h2 class="header-mid__select">Select a language</h2>
-							<ul class="header-mid__langs d-flex justify-content-start">
-								<li class="active-lang"><a href="">English</a></li>
-								<li><a href="">Français</a></li>
-								<li><a href="">Deutsch</a></li>
-								<li><a href="">Español</a></li>
-								<li><a href="">日本語</a></li>
+							<ul class="header-mid__langs d-sm-flex justify-content-start d-none">
+								<li class="active-lang"><a href="/">English</a></li>
+								<li><a href="/fr">Français</a></li>
+								<li><a href="/de">Deutsch</a></li>
+								<li><a href="/es">Español</a></li>
+								<li><a href="/jp">日本語</a></li>
 							</ul>
+							<ul class="header-mid__langs d-flex d-sm-none">
+									<li class="active-lang"><a href="/">EN</a></li>
+									<li><a href="/fr">FR</a></li>
+									<li><a href="/de">DE</a></li>
+									<li><a href="/es">ES</a></li>
+									<li><a href="/jp">JP</a></li>
+								</ul>
 							<div class="header-mid__content">
-								<h1 >
-								<strong>	NonWater spray </strong> <br>	offers 
-									invisible protection <br> for your clothes and footwear
-								</h1>
-								<div class="header-mid__btn d-flex flex-column">
-										<button type="submit"> Buy for <br> $25</button>
-										<img src="img/pays.png" alt="">
+								<div class="header-mid__content-box">
+										<h1 >
+												<strong>	NonWater spray </strong> <br>	offers 
+													invisible protection <br> for your clothes and footwear
+												</h1>
+												<img src="./img/t-but.png" alt="" class="d-block d-md-none">
 								</div>
+							
+	
+										<div class="header-mid__btn d-none flex-column d-md-flex">
+
+											<button type="submit" onclick="fbq('track', 'AddToCart', {value: 25.00,currency: 'USD'}); location.href = 'https://www.2checkout.com/checkout/purchase?sid=103135585&quantity=1&product_id=1&currency_code=USD&%24curPage=en-mini&%24flag=0';"> Buy for <br> $25</button>
+												<img src="img/pays.png" alt="">
+										</div>
+							
+
+
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="header__special-btns-mini">
+				<button class="special-btn-spec" onclick="location.href = 'https://nonwater.com/upsale.php';">Special offers</button>
+				<button class="special-btn-buy" type="submit" onclick="fbq('track', 'AddToCart', {value: 25.00,currency: 'USD'}); location.href = 'https://www.2checkout.com/checkout/purchase?sid=103135585&quantity=1&product_id=1&currency_code=USD&%24curPage=en-mini&%24flag=0';">Buy for 25$
+						<img src="img/pays.png" alt="" class="buy-now-img">
+				</button>
 			</div>
 		</header>
 		<div class="main">
@@ -142,49 +177,49 @@
 					</div>
 				</div>
 			</div>
-			<div class="advantages">
+			<div class="advantages" id="advantages">
 					<h2 class="block-title">The advantages of <span class="block-title-hl"> NON 
 						</span> <strong>WATER</strong>  spray </h2>
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="advantages__left">
-								<div class="advantages__left-item">
+								<div class="advantages__left-item animated bounceInDown">
 									<img src="img/kap-1.png" alt="">
 									<div class="advantages__left-item-content">
 										<h5>Invisible</h5>
 										<p>Invisible, does not change colour or texture of a material</p>
 									</div>
 								</div>
-								<div class="advantages__left-item">
+								<div class="advantages__left-item animated bounceInDown">
 									<img src="img/kap-4.png" alt="">
 									<div class="advantages__left-item-content">
 										<h5>Efficient</h5>
 										<p>The waterproof effect is significantly better compared to other water repellents</p>
 									</div>
 								</div>
-								<div class="advantages__left-item">
+								<div class="advantages__left-item animated bounceInDown">
 									<img src="img/kap-2.png" alt="">
 									<div class="advantages__left-item-content">
 										<h5>Durable</h5>
 										<p>Offers full protection for up to 3 months, which makes it about 10 times more durable than any other water repellents</p>	
 									</div>
 								</div>
-								<div class="advantages__left-item">
+								<div class="advantages__left-item animated bounceInDown">
 									<img src="img/kap-5.png" alt="">
 									<div class="advantages__left-item-content">
 										<h5>Eco-friendly</h5>
 										<p>Does not contain solvents, thus is harmless for such sensitive materials as suede or nubuck</p>
 									</div>
 								</div>
-								<div class="advantages__left-item">
+								<div class="advantages__left-item animated bounceInDown">
 									<img src="img/kap-3.png" alt="">
 									<div class="advantages__left-item-content">
 										<h5>Breathable</h5>
 										<p>Does not alter vapor or air permeability, making the clothes and footwear breathable</p>
 									</div>
 								</div>
-								<div class="advantages__left-item">
+								<div class="advantages__left-item animated bounceInDown">
 									<img src="img/kap-6.png" alt="">
 									<div class="advantages__left-item-content">
 										<h5>Multifunctional</h5>
@@ -203,12 +238,15 @@
 			</div>
 			
 			<div class="promo">
+					<div class="promo-micro-box d-md-none">
+							<h3 class="promo-micro-t">Free <span>shipping</span></h3>
+							<h3 class="promo-worldwide">Worldwide!</h3>
+							<h3 class="promo-takes">Takes from 2 to 4 weeks</h3>
+					</div>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="promo-block">
-
-							
 								<h2 class="promo__title">
 									Promo! 2+1
 								</h2>
@@ -217,7 +255,7 @@
 									instead of <span class="price-throught"> $75</span>
 								</h3>
 								<p class="promo__desc">BUY 2 BOTTLES AND GET 1 FREE</p>
-								<button class="promo__btn">BUY NOW</button>
+								<button class="promo__btn" type="submit" onclick="fbq('track', 'AddToCart', {value: 50.00,currency: 'USD'}); location.href = 'https://www.2checkout.com/checkout/purchase?sid=103135585&quantity=1&product_id=3&currency_code=USD&%24curPage=en&%24flag=0'">BUY NOW</button>
 								<p class="promo__end">Promo will end in:</p>
 								<div class="counter">
 										<div class="clock"></div>
@@ -231,15 +269,19 @@
 					</div>
 				</div>
 			</div>
-			<div class="how">
+			<div class="how" id="how">
 				<div class="container">
 					<div class="row">
 						<div class="offset-md-1 col-md-10">
 							<div class="how__box">	
 									<div class="how__block">
+											<h3 class="d-md-block d-lg-none how__block-title-mini">
+													How it works
+												</h3>
+										<img src="./img/t-work-wrapper.bg1mini.png" alt="" class="d-sm-block d-md-block d-lg-none how__block-img">
 											<div class="how__block-content">
 			
-												<h3>
+												<h3 class="d-none d-sm-none d-md-none d-lg-block">
 													How it works
 												</h3>
 												<p>A very efficient product for protecting your clothes and footwear from water damage. The 
@@ -297,7 +339,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="review-slider">
-									<div class="slide-review-item" >
+									<div class="slide-review-item post-1" >
 										<a href="https://www.facebook.com/FlpTryne/posts/10155882868800086" style="display:inline-block" target="_blank">
 											<img src="./img/post_1.png" alt="">
 										</a>
@@ -328,7 +370,7 @@
 				</div>
 			</div>
 
-			<div class="promo">
+			<div class="promo promo2">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -355,7 +397,7 @@
 				</div>
 			</div>
 
-			<div class="videos">
+			<div class="videos" id="video">
 					<h2 class=""> Watch <span class="">more videos 
 						</span> <strong></strong>  </h2>
 				<div class="container">
@@ -411,12 +453,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="faq">
+			<div class="faq" id="faq">
 					<h2 class="block-title">FAQ<span class="block-title-hl">
 						</span> <strong></strong>   </h2>
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-4 d-sm-none d-lg-block">
+							<div class="col-lg-4 d-none d-sm-none  d-lg-block">
 								<img src="./img/answer-1.png" alt="" class="faq-bottle">
 							</div>
 							<div class="col-md-12 col-lg-8">
@@ -425,7 +467,7 @@
 											  <div class="card-header" id="headingOne">
 												<h5 class="mb-0">
 												  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-														How do I wash the processed clothes if they repel water and its solutions?
+															How do I wash the processed clothes if they repel <br class="d-md-none"> water and its solutions?
 												  </button>
 												</h5>
 											  </div>
@@ -440,7 +482,7 @@
 											  <div class="card-header" id="headingTwo">
 												<h5 class="mb-0">
 												  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-														Is an item treated with NonWater still waterproof after washing?
+														Is an item treated with NonWater still <br class="d-md-none">waterproof after washing?
 												  </button>
 												</h5>
 											  </div>
@@ -454,7 +496,7 @@
 											  <div class="card-header" id="headingThree">
 												<h5 class="mb-0">
 												  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-														How can I remove dense, sticky pollutants (silt, liquid fats, etc.) from surface under treatment?
+														How can I remove dense, sticky pollutants <br class="d-md-none">(silt, liquid fats, etc.) from surface under treatment?
 												  </button>
 												</h5>
 											  </div>
@@ -468,7 +510,7 @@
 												<div class="card-header" id="headingFour">
 												  <h5 class="mb-0">
 													<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-																How long does the superhydrophobic effect last after the NonWater treatment?
+																How long does the superhydrophobic effect <br class="d-md-none">last after the NonWater treatment?
 													</button>
 												  </h5>
 												</div>
@@ -487,7 +529,7 @@
 												<div class="card-header" id="headingFive">
 												  <h5 class="mb-0">
 													<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-															Can I apply the superhydrophobic NonWater repellent to linen or underwear?
+															Can I apply the superhydrophobic NonWater <br class="d-md-none">repellent to linen or underwear?
 													</button>
 													</h5>
 												</div>
@@ -523,7 +565,7 @@
 												<div class="card-header" id="headingSeven">
 													<h5 class="mb-0">
 														<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseThree">
-															Can I apply the NonWater spray on human or animal hair to make them waterproof?
+															Can I apply the NonWater spray on human or animal<br class="d-md-none"> hair to make them waterproof?
 														</button>
 													</h5>
 												</div>
@@ -563,49 +605,119 @@
 
 		</div>
 
-
-
 		<footer class="footer">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
 						<div class="footer__logo foot">
-							<a href="">
+							<a href="/c">
 								<img src="./img/f-logo.png" alt="">
 							</a>
 						</div>	
 					</div>
-					<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
 						<ul class="footer__menu foot">
-							<li><a href="">Advantages</a></li>
-							<li><a href="">How it work</a></li>
-							<li><a href="">FAQ</a></li>
-							<li><a href="">Partnership</a></li>
+							<li><a href="#advantages">Advantages</a></li>
+							<li><a href="#how">How it work</a></li>
+							<li><a href="#faq">FAQ</a></li>
+							<li><a href="https://nonwater.com/partnership.php">Partnership</a></li>
 						</ul>
 					</div>
-					<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
 						<h5>Contacts</h5>
 						<ul class="footer__cont">
 							<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="tel: +33186650868"> +33186650868</a></li>
 							<li><i class="fa fa-phone" aria-hidden="true"></i><a href="mailto: office@nonwater.com"> office@nonwater.com</a></li>
 						</ul>
 					</div>
-					<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="col-6 col-sm-6 col-md-6 col-lg-3">
 						<ul class="footer__descs">
-							<li> <a href="/">Description and mavuals</a></li>
+							<li> <a href="./instructions.pdf">Description and manuals</a></li>
 							
-							<li><a href="/">Terms and Conditions</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#exampleModal">Terms and Conditions</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 
 		</footer>
+		
 
 
 
 
 	</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+				<div class="modal-content">
+						<div class="modal-header">
+								<h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+							<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true">&times;</button>
+						
+						</div>
+						<div class="modal-body">
+			
+							<p>Customer is an individual person, placing Orders on the website, at www.nonwater.com, hereinafter mentioned as a Goods receiver.
+			
+								Seller is the online store, at www.nonwater.com, where goods are presented. They are offered by the Seller to the Customers for placing Orders, as well as for payment and Order delivery terms.
+			
+								Goods are material objects available for sale on the Website.
+			
+								Order is an appropriately arranged delivery request of a list of goods chosen on the Website and  shipped to the address indicated by the Customer.
+								<br/>
+							</p>
+							<p><br/>
+							</p>
+							<p>1. General Regulations</p>
+							<p>1.1. By ordering Goods online through nonwater.com, the Customer agrees to the Terms and Conditions (hereinafter, Terms) provided below.</p>
+							<p>1.2. The Seller reserves the right to amend these Terms. Customers, who have made purchases before such changes, will be notified via email.</p>
+							<p>1.3. By placing the Order, the Customer agrees to accept the Terms.</p>
+							<br>
+							<p>2. Processing of the orders, payments and delivery deadlines</p>
+							<p>2.1. Customer places the Order directly on the Website.</p>
+							<p>2.2. After Goods have been chosen, the Customer is redirected to the website of the third party, International Payment System, at 2checkout.com, in order to make a payment for Goods and their delivery.</p>
+							<p>2.3. The Customer has to provide his contact information, delivery address, billing address and credit card details for the International Payment System website.</p>
+							<p>2.4. The Seller does not and cannot have access to any kind of Customer credit card information. All monetary operations are carried out and protected by the Payment System.</p>
+							<p>2.5. The Seller has access to the following data provided by the Customer to the Payment System: the Customer contact information, delivery address, and a total amount of payment. </p>
+							<p>2.6. The Seller is not responsible for the accuracy of information provided by the Customer during registration.</p>
+							<p>2.7. After the payment has been made, the Customer receives the payment confirmation, sent to the email address provided.</p>
+							<p>2.8. By paying for Goods, the Customer confirms that he read and understood the recommendations and limitations concerning the use of Goods, which are specified in the “Description and manuals” section at nonwater.com .</p>
+							<br>
+							<p>3. Delivery</p>
+							<p>3.1. Delivery is carried out all over the World, to the settled areas where Postal Service is available.</p>
+							<p>3.2. Goods are mailed to the Customer on the next business day after the payment. The email with tracking number will be sent to the Customer upon dispatching the Goods.</p>
+							<p>3.3. The Order delivery deadline depends on the Country and region of shipment, as well as on the efficiency of a local delivery service, and does not necessary depend on the Seller.</p>
+							<p>3.4. Approximate delivery time to the most countries of the World (including the USA and countries of the European Union) is about 7-14 days. The maximum delivery time is 30 days from the date of shipping.</p>
+							<p>3.5. The Seller will make every effort to meet the previously mentioned delivery deadlines. However, delivery delays are possible due to the unforeseen circumstances, which are beyond the powers of the Representative.</p>
+							<p>3.6. Shipping payment is made together with payment for the Order on the Payment System website.</p>
+							<br>
+							<p>4. Warranties and Responsibilities</p>
+							<p>4.1. The Seller is not responsible for damage caused to the Customer as a result of misuse of Goods ordered at the Website.</p>
+							<p>4.2. The Seller is not responsible for the information obtained from the External Websites.</p>
+							<p>4.3. The Seller can reassign, or otherwise transfer, the rights and obligations arising from their relations with the Customer to the third parties.</p>
+							<p>4.4. The seller guarantees the quality of Goods only in case of compliance with the recommendations and limitations for the use of Goods provided in the “Description and Manuals” section on a corporate website at www.nonwater.com .</p>
+							<p>4.5. Return of Goods is accepted only if the quality of Goods is inconsistent with the properties set out in the section “Description and Manuals” at www.nonwater.com .</p>
+							<p>4.6. The Seller accepts requests concerning the quality or return of the Goods via e-mail provided in the “Contacts” section of the official website, at www.nonwater.com .</p>
+							<br>
+							<p>5. Confidentiality and protection of personal data</p>
+							<p>5.1. The Seller undertakes not to disclose the information received from the Customer, except in the cases when dealing with the agents and third parties in order to fulfill the obligations to the Customer, including Delivery Service.</p>
+							<p>5.2. The seller reserves the right to use the “cookies” technology. “Cookies” do not contain confidential information and are not assigned to the third parties.</p>
+							<p>5.3. The Seller gathers information on the IP-addresses from the visitor section of the website, at www.nonwater.com . This information is not used for identification of a visitor.</p>
+						</div>
+					</div>
+		</div>
+	  </div>
+	
+	<div id="sale1"  href="https://www.2checkout.com/checkout/purchase?sid=103135585&quantity=1&product_id=1&currency_code=USD&%24curPage=en&%24flag=0" onClick="fbq('track', 'AddToCart', {value: 25.00,currency: 'USD'});">Buy for $25 <br>
+		<img src="img/pays.png" alt="pays">
+	</div>
+	<a href="//m.me/1800519720199758" class="messenger messenger-hover-js" id="messenger" onclick="window.open('//m.me/1800519720199758', 'messengerwindow', 'left=0, top=0, width=500, height='+screen.availHeight+''); return false;" style="width: 80px; height: 80px; background-size: 295px;"></a>
+
+	<div id="up" style="display: block;"><img alt="Прокрутить вверх" src="img/up.png"></div>
 	<!-- <div id="sale">Buy for $25 <br>
 		<img src="img/pays.png" alt="pays">
 	</div> -->
@@ -615,8 +727,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" ></script>
 	<!-- <script src="./libs/jqueryUI/jquery-ui.min.js"></script> -->
-	<script src="./libs/FlipClock/flipclock.min.js"></script>
+	<!-- <script src="./libs/FlipClock/flipclock.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 	<script src="./libs/slick/slick.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
 	<script src="js/common.js"></script>
 
